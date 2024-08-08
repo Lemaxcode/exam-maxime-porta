@@ -1,0 +1,16 @@
+<h1>C'est pas un fruit, c'est une affaire !</h1>
+<div class="container mt-3">
+    <div class="row">
+      <div class="col-md-4" *ngFor="let article of articles">
+        <div class="card mb-4 shadow-sm">
+          <div class="card-body">
+            <h5 class="card-title">{{ article.name }}</h5>
+            <img src="{{article.image}}" alt="">
+            <p class="card-text">Prix: {{ article.price }}$</p>
+            <button class="btn btn-primary" (click)="addPanier(article)">Ajouter au panier</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

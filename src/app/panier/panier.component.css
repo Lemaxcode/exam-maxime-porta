@@ -1,0 +1,10 @@
+img {
+  width: 250px;
+  height: 150px;
+  object-fit: contain;
+}
+#total {
+  font-weight: bold;
+  font-size: 28px;
+  color: green;
+}

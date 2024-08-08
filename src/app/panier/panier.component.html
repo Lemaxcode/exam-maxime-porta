@@ -1,0 +1,30 @@
+<div class="container mt-3">
+  <h2>Panier</h2>
+  <table class="table table-bordered">
+    <thead>
+      <tr>
+        <th>Nom</th>
+        <th>Article</th>
+        <th>Prix</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for (article of panierService.fetchAll(); track $index; let i = $index) {
+      <tr>
+        <td>{{ article.name }}</td>
+        <td><img src="{{ article.image }}" alt="{{ article.name }}" /></td>
+        <td>{{ article.price }}$</td>
+        
+        <td>
+          <button class="btn btn-danger" (click)="removePanier(i)">
+            Retirer
+          </button>
+        </td>
+      </tr>
+      }
+
+      <p id=total>Total {{ panierService.getTotal() }} $</p>
+    </tbody>
+  </table>
+</div>
